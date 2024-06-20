@@ -1,5 +1,5 @@
-import app from './src/app';
+import app from "./src/app";
 
 app.listen(process.env.PORT, () => {
-    console.log("Servidor rodando!");
-})
+  console.log("Aplicação rodando!");
+});

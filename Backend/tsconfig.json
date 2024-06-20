@@ -16,7 +16,7 @@
     "strictPropertyInitialization": false,
     "typeRoots": ["./src/@types"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "server.ts"],
   "exclude": ["node_modules", "dist"],
   "ts-node": {
     "files": true
