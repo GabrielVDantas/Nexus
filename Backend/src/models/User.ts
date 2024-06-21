@@ -7,22 +7,22 @@ import {
 
 @Entity("users")
 class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({type: 'bigint'})
   id: Long;
 
-  @Column()
+  @Column({type: 'varchar', length: 100, nullable: false})
   username: string;
 
-  @Column()
+  @Column({type: 'varchar', length: 100, nullable: false})
   email: string;
 
-  @Column()
+  @Column({type: 'varchar', nullable: false})
   password: string;
 
-  @Column({default: null})
+  @Column({default: null, type: 'longblob'})
   photo: Buffer;
 
-  @Column({default: null})
+  @Column({default: null, type: 'text'})
   ownDescription: string;
 
   @Column({default: false})
