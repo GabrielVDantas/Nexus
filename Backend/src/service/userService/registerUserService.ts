@@ -2,6 +2,7 @@ import RegisterUserDTO from "../../dtos/userDtos/registerUserDto";
 import userRepository from "../../repositories/userRepository";
 import bcrypt from 'bcrypt'
 import SendMailService from "../mailService/sendMailService";
+import PasswordService from "../passwordService/passwordService";
 
 class RegisterUserService {
   static async registerUserService(registerUserData: RegisterUserDTO) {
@@ -10,7 +11,7 @@ class RegisterUserService {
     if (existingUser) {
         throw new Error("Já existe um usuário com esse e-mail!");
     }
-    const encodedPassword = await bcrypt.hash(registerUserData.password, 10);
+    const encodedPassword = await PasswordService.encodePassword(registerUserData.password);
     registerUserData.password = encodedPassword;
 
     const newUser = userRepository.create(registerUserData);

@@ -6,15 +6,15 @@ class LoginUserController {
     const loginUserData = req.loginUserDto;
     try {
       const loginUser = await LoginUserService.loginUserService(loginUserData);
-      return res.status(201).json({
-        message: "Usuário registrado com sucesso!",
+      return res.status(200).json({
+        message: "Usuário logado com sucesso!",
         user: loginUser,
       });
     } catch (error) {
       return res
         .status(500)
         .json({
-          message: "Algo deu errado, usuário não será registrado!",
+          message: "Algo deu errado, usuário não será logado!",
           error: error,
         });
     }
