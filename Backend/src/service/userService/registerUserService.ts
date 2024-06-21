@@ -1,8 +1,7 @@
 import RegisterUserDTO from "../../dtos/userDtos/registerUserDto";
 import userRepository from "../../repositories/userRepository";
 import bcrypt from 'bcrypt'
-import MailService from "../mailService/mailService";
-import User from "../../models/User";
+import SendMailService from "../mailService/sendMailService";
 
 class RegisterUserService {
   static async registerUserService(registerUserData: RegisterUserDTO) {
@@ -17,9 +16,8 @@ class RegisterUserService {
     const newUser = userRepository.create(registerUserData);
     await userRepository.save(newUser);
 
-    await MailService.mailService();
+    await SendMailService.sendMailService(newUser);
 
-    
     return {id: newUser.id, username: newUser.username, email: newUser.email, active: newUser.active};
   }
 

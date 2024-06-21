@@ -1,19 +1,18 @@
 import LoginUserDTO from "../../dtos/userDtos/loginUserDto";
 import userRepository from "../../repositories/userRepository";
 
-class RegisterUserService {
-  static async registerUserService(loginUserData: LoginUserDTO) {
+class LoginUserService {
+  static async loginUserService(loginUserData: LoginUserDTO) {
 
     const existingUser = await userRepository.findOne({ where: { email: loginUserData.email } });
     if (!existingUser) {
         throw new Error("Já existe um usuário com esse e-mail!");
     }
 
-     
-    await userRepository.save(newUser);
+    await userRepository.save(existingUser);
 
-    return newUser;
+    return existingUser;
   }
 }
 
-export default RegisterUserService;
+export default LoginUserService;

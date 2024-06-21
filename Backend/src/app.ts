@@ -3,14 +3,14 @@ import "reflect-metadata"
 import dotenv from 'dotenv';
 import { database } from "./config/database";
 import cors from "cors";
-import userRoutes from "./routes/userRoutes";
+import indexRouter from "./routes/indexRouter";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(userRoutes);
+app.use(indexRouter);
 
 database.initialize() 
     .then(() => {
