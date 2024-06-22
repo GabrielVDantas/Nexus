@@ -1,0 +1,12 @@
+.homeStyle {
+  display: flex;
+  height: 100vh;
+  background-color: var(--color-1);
+  width: 100%;
+}
+
+.homeBannerStyle {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}

@@ -1,5 +1,7 @@
 import { DataSource } from "typeorm";
 import User from "../models/User";
+import Project from "../models/Project";
+import Image from "../models/Image";
 
 export const database = new DataSource({
     type: "mysql",
@@ -8,6 +10,6 @@ export const database = new DataSource({
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    entities: [User],
+    entities: [User, Project, Image],
     migrations: [`${__dirname}/../migrations/*.{ts,js}`],
 })

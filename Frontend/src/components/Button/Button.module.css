@@ -1,0 +1,19 @@
+.buttonStyle {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  border: var(--button-border);
+  color: var(--color-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.buttonStyle:hover {
+  transform: scale(1.1);
+  background-color: var(--color-2);
+  color: var(--color-1);
+}

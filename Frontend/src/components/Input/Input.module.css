@@ -1,0 +1,35 @@
+.inputStyle {
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  border: var(--input-border);
+  height: 40px;
+  color: var(--color-3);
+  font-size: 1em;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  display: block;
+}
+
+.inputStyle:focus {
+  border: var(--button-border);
+  outline: none;
+  color: var(--color-2);
+}
+
+.inputStyle::placeholder {
+  color: var(--color-3);
+}
+
+input[type="file"]::file-selector-button {
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 6.7px;
+  border: var(--input-border);
+  color: var(--color-3);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,0 +1,30 @@
+.loginFormStyle {
+  margin: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--color-1);
+  height: 100vh;
+}
+
+.loginFormStyle form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginFormStyle input {
+  width: 75%;
+}
+
+.loginFormStyle form a,
+button {
+  height: 36px;
+  font-size: 1em;
+  padding: 0 20px;
+  margin-top: 1rem;
+  width: 75%;
+}

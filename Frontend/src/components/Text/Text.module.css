@@ -1,0 +1,23 @@
+.h2Style {
+  color: var(--color-3);
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.h3Style {
+  color: var(--color-3);
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.pStyle {
+  color: var(--color-3);
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.strongStyle {
+  color: var(--color-2);
+  font-size: 40px;
+  font-weight: 800;
+}

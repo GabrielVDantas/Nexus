@@ -1,9 +1,9 @@
 import express from "express";
-import "reflect-metadata"
 import dotenv from 'dotenv';
 import { database } from "./config/database";
 import cors from "cors";
 import indexRouter from "./routes/indexRouter";
+import "reflect-metadata"
 
 dotenv.config();
 
@@ -18,4 +18,4 @@ database.initialize()
     })
     .catch((error) => console.log(error));
     
-export default app
+export default app;
