@@ -26,7 +26,7 @@ const RegisterForm = () => {
         confirmPassword
       );
       if (response && response.status === 201) {
-        navigate("/login-user");
+        navigate("/activate");
       }
     } catch (error) {
       console.error(error);

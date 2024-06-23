@@ -6,6 +6,7 @@ import Button from "../../Button/Button";
 import Anchor from "../../Button/Anchor";
 import H2 from "../../Text/H2";
 import P from "../../Text/P";
+import LoginUserService from "../../../service/userService/loginUserService";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -14,17 +15,14 @@ const LoginForm = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    // try {
-    //   const response = await LoginUserService.loginUserRequest({
-    //     email,
-    //     password,
-    //   });
-    //   if (response && response.status === 200) {
-    //     navigate("/get-feed-projects");
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      const response = await LoginUserService.loginUserService(email, password);
+      if (response && response.status === 200) {
+        console.log("Tudo certo!");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -48,7 +46,7 @@ const LoginForm = () => {
           placeholder="Senha..."
           multiple={false}
         />
-        <Button text="Entrar em minha conta" />
+        <Button text="Entrar" />
         <Anchor to="/register-user" text="Ainda não tenho uma conta" />
       </form>
     </section>

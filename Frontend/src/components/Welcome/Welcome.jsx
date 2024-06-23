@@ -15,7 +15,7 @@ const Welcome = () => {
           tem espaço para crescer e desenvolver os melhores games do mercado!"
       />
       <div className={styles.welcomeAnchorStyle}>
-        <Anchor text="Login" />
+        <Anchor text="Login" to="/login-user"/>
         <Anchor text="Cadastro" to="/register-user"/>
       </div>
     </section>

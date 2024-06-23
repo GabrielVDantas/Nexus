@@ -1,5 +1,5 @@
-import PasswordService from "../passwordService/passwordService";
-import baseUrl from "../urlService/urlService";
+import PasswordService from "../utilService/passwordService";
+import baseUrl from "../utilService/urlService";
 
 class RegisterUserService {
   static async registerUserService(username, email, password, confirmPassword) {
@@ -9,9 +9,9 @@ class RegisterUserService {
     );
 
     const response = await baseUrl.post("/register-user", {
-      username,
-      email,
-      registerPassword,
+      username: username,
+      email: email,
+      password: registerPassword,
     });
 
     return response;
