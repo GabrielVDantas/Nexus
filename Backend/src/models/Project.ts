@@ -1,12 +1,18 @@
 import {
   Column,
   Entity,
+  JoinColumn,
   Long,
+  ManyToMany,
+  ManyToOne,
   OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import Image from "./Image";
+import Category from "./Category";
+import User from "./User";
+import CoverArt from "./Images/CoverArt";
+import Screenshot from "./Images/Screenshot";
 
 @Entity("projects")
 class Project {
@@ -20,15 +26,22 @@ class Project {
   description: string;
 
   @Column({ type: "decimal", precision: 7, scale: 2, nullable: false })
-  goal: string;
+  goal: number;
 
-  @Column({ type: "longblob", nullable: true })
-  @OneToOne(() => Image, (image) => image.project)
-  mainImage: Image;
+  @ManyToOne(() => User, user => user.projects)
+  @JoinColumn({name: "user_id"})
+  user: User;
 
-  @Column({ type: "longblob", nullable: true })
-  @OneToMany(() => Image, (image) => image.project)
-  descritiveImages: Image[];
+  @OneToOne(() => CoverArt, coverArt => coverArt.project)
+  @JoinColumn({name: "cover_art_id"})
+  coverArt: CoverArt;
+
+  @OneToMany(() => Screenshot, screenshot => screenshot.project)
+  @JoinColumn({name: "project_id"})
+  screenshots: Screenshot[];
+
+  @ManyToMany(() => Category, category => category.projects)
+  categories: Category[];
 }
 
 export default Project;

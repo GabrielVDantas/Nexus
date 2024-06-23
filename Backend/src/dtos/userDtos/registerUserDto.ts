@@ -13,14 +13,6 @@ class RegisterUserDTO {
   @IsNotEmpty()
   @MinLength(4)
   password: string;
-
-  @IsOptional()
-  photo: Buffer;
-
-  @IsOptional()
-  @IsString()
-  @MaxLength(500)
-  ownDescription: string;
 }
 
 export default RegisterUserDTO;

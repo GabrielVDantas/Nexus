@@ -1,24 +1,21 @@
-import { validate } from "class-validator";
 import LoginUserDTO from "../../dtos/userDtos/loginUserDto";
 import { NextFunction, Request, Response } from "express";
+import AnaliseDtoService from "../../service/dtoService/dtoService";
 
 const loginUserMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-    const loginUserDto = new LoginUserDTO();
-    loginUserDto.email = req.body.email;
-    loginUserDto.password = req.body.password;
+  const loginUserDto = new LoginUserDTO();
 
-    const errors = await validate(loginUserDto);
-    if (errors.length > 0) {
-        return res.status(400).json({errors});
-    }
+  await AnaliseDtoService.fillDtoService(req, loginUserDto);
 
-    req.loginUserDto = loginUserDto;
+  await AnaliseDtoService.validateDto(res, loginUserDto);
 
-    next();
+  req.loginUserDto = loginUserDto;
+
+  next();
 };
 
 export default loginUserMiddleware;

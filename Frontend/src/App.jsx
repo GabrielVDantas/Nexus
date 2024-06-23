@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Activate from "./pages/Activate/Activate";
+import Nav from "./components/Nav/Nav";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/register-user" element={<Register />} />
         <Route path="/login-user" element={<Login />} />
         <Route path="/activate" element={<Activate />} />
+        <Route path="/feed" element={<Nav />} />
       </Routes>
     </BrowserRouter>
   );

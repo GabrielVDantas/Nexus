@@ -1,9 +1,12 @@
 import {
   Column,
   Entity,
+  JoinColumn,
   Long,
+  OneToMany,
   PrimaryGeneratedColumn
 } from "typeorm";
+import Project from "./Project";
 
 @Entity("users")
 class User {
@@ -23,10 +26,14 @@ class User {
   photo: Buffer;
 
   @Column({default: null, type: 'text'})
-  ownDescription: string;
+  description: string;
 
   @Column({default: false})
   active: boolean;
+
+  @OneToMany(() => Project, project => project.user)
+  @JoinColumn({name: "user_id"})
+  projects: Project[];
 }
 
 export default User;

@@ -8,6 +8,7 @@ declare global {
             user: Partial<User>;
             registerUserDto: RegisterUserDTO;
             loginUserDto: LoginUserDTO;
+            updateUserDTO: UpdateUserDTO;
         }
     } 
 }
