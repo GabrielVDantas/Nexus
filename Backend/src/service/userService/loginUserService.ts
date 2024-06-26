@@ -1,12 +1,11 @@
-import LoginUserDTO from "../../dtos/userDtos/loginUserDto";
 import userRepository from "../../repositories/userRepository";
 import PasswordService from "../passwordService/passwordService";
 import TokenService from "../tokenService/tokenService";
 
 class LoginUserService {
-  static async loginUserService(loginUserData: LoginUserDTO) {
+  static async loginUserService(email: string, password: string) {
 
-    const existingUser = await userRepository.findOne({ where: { email: loginUserData.email } });
+    const existingUser = await userRepository.findOne({ where: { email } });
     if (!existingUser) {
         throw new Error("Informações incorretas!");
     }
@@ -15,7 +14,7 @@ class LoginUserService {
       throw new Error("Conta inativa!");
     }
 
-    const result = await PasswordService.compareCodedPasswords(loginUserData.password, existingUser.password);
+    const result = await PasswordService.compareCodedPasswords(password, existingUser.password);
 
     if (!result) {
       throw new Error("Informações incorretas!")
@@ -23,7 +22,7 @@ class LoginUserService {
 
     const token = await TokenService.generateToken(existingUser);
 
-    return {id: existingUser.id, username: existingUser.username, email: existingUser.email, active: existingUser.active, token};
+    return {id: existingUser.id, username: existingUser.username, email: existingUser.email, token};
   }
 }
 

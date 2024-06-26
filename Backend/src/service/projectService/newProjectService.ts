@@ -1,5 +1,4 @@
 import { Long } from "typeorm";
-import NewProjectDTO from "../../dtos/projectDtos/newProjectDto";
 import userRepository from "../../repositories/userRepository";
 import User from "../../models/User";
 import projectRepository from "../../repositories/projectRepository";
@@ -9,40 +8,36 @@ import categoryRepository from "../../repositories/categoryRepository";
 import Category from "../../models/Category";
 
 class NewProjectService {
-  static async newProjectService(userId: Long, newProjectData: NewProjectDTO) {
-    const user = (await userRepository.findOneBy({ id: userId })) as User;
+  static async newProjectService(name: string, description: string, goal: number) {
+    // const user = (await userRepository.findOneBy({ id: userId })) as User;
 
     const project = projectRepository.create({
-      name: newProjectData.name,
-      description: newProjectData.description,
-      goal: newProjectData.goal,
-      user: user,
+      name, description, goal
     });
 
     await projectRepository.save(project);
 
-    const coverArt = coverArtRepository.create({
-      imageBuffer: newProjectData.coverArt,
-      project: project,
-    });
+    // const coverArtFile = files.find(file => file.fieldname === 'coverArt') as Express.Multer.File;
+    // const coverArtAsBuffer = coverArtFile.buffer;
 
-    await coverArtRepository.save(coverArt);
+    // const coverArt = coverArtRepository.create({imageBuffer: coverArtAsBuffer, project: project})
 
-    newProjectData.screenshots.forEach(async(projectScreenshot) => {
-      const screenshot = screenshotRepository.create({
-        imageBuffer: projectScreenshot,
-        project: project,
-      });
-      await screenshotRepository.save(screenshot);
-    });
+    // await coverArtRepository.save(coverArt);
 
-    newProjectData.categories.forEach(async (category) => {
-      const existingCategory = await categoryRepository.findOne({
-        where: { name: category },
-      }) as Category;
-      existingCategory.projects.push(project);
-      await categoryRepository.save(existingCategory);
-    });
+    // const screenshotFiles = files.filter(file => file.filename === 'screenshots') as Express.Multer.File[];
+    // const screenshotAsBuffer = screenshotFiles.map((screenshotFile) => screenshotFile.buffer);
+    // screenshotAsBuffer.forEach( async(buffer) => {
+    //   const screenshot = screenshotRepository.create({imageBuffer: buffer, project: project});
+    //   await screenshotRepository.save(screenshot);
+    // })
+
+    // newProjectData.categories.forEach(async (category) => {
+    //   const existingCategory = await categoryRepository.findOne({
+    //     where: { name: category },
+    //   }) as Category;
+    //   existingCategory.projects.push(project);
+    //   await categoryRepository.save(existingCategory);
+    // });
 
     return project;
   }

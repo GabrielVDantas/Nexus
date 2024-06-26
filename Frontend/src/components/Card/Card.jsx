@@ -1,36 +1,35 @@
-import { useEffect, useState } from "react";
-import H3 from "../Text/H3";
-import GetProjectsService from "../../service/projectService/getProjectsService";
+import styles from "./Card.module.css"
+import { useState } from "react";
 import P from "../Text/P";
+import H2 from "../Text/H2";
+import Button from "../Button/Button";
 
-const Card = () => {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    async function getFeedProjects() {
-      try {
-        const response = await GetProjectsService.getFeedProjectsService();
-        if (response && response.status === 200) {
-          setProjects(response.data.projects);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getFeedProjects();
-  }, []);
+const Card = ({ project }) => {
+  const [moreInformation, setMoreInformation] = useState(false);
 
   return (
-    <section>
-      {projects.forEach((project) => (
-        <div key={project.id}>
-          <H3 text={project.name}/>
-          <P text={project.description}/>
-          <img src={project.coverArt}/>
+    <article className={styles.cardStyle}>
+      <H2 text={project.name} />
+      <P text={project.categories} />
+      <img src={project.coverArt} />
+
+      <Button
+        text="Ver mais"
+        onClick={() => setMoreInformation(!moreInformation)}
+      >
+        {moreInformation ? "Ver menos" : "Ver mais"}
+      </Button>
+      {moreInformation && (
+        <div>
+          <P text={project.description} />
+          <P text={project.goal} />
+          {project.screenshots.forEach((screenshot, index) => {
+            <img key={index} src={screenshot} />
+          })}
         </div>
-      ))}
-    </section>
-  )
+      )}
+    </article>
+  );
 };
 
 export default Card;

@@ -1,12 +1,12 @@
-import styles from "./LoginForm.module.css"
+import styles from "./LoginForm.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "../../Input/Input";
 import Button from "../../Button/Button";
 import Anchor from "../../Button/Anchor";
 import H2 from "../../Text/H2";
 import P from "../../Text/P";
 import LoginUserService from "../../../service/userService/loginUserService";
+import LoginUserInput from "../../Input/LoginUserInput";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const LoginForm = () => {
     try {
       const response = await LoginUserService.loginUserService(email, password);
       if (response && response.status === 200) {
-        console.log("Tudo certo!");
+        navigate("/feed-projects");
       }
     } catch (error) {
       console.error(error);
@@ -30,21 +30,11 @@ const LoginForm = () => {
       <form onSubmit={submitForm}>
         <H2 text="Olá, seja bem-vindo(a) de volta!" />
         <P text="Entre agora mesmo em sua conta =)" />
-        <Input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required={true}
-          type="email"
-          placeholder="E-mail..."
-          multiple={false}
-        />
-        <Input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required={true}
-          type="password"
-          placeholder="Senha..."
-          multiple={false}
+        <LoginUserInput
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
         />
         <Button text="Entrar" />
         <Anchor to="/register-user" text="Ainda não tenho uma conta" />

@@ -1,0 +1,5 @@
+.newProjectStyle {
+  width: 100%;
+  background-color: var(--color-1);
+  display: flex;
+}

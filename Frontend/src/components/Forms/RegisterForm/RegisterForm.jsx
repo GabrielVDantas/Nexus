@@ -3,10 +3,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import H2 from "../../Text/H2";
 import P from "../../Text/P";
-import Input from "../../Input/Input";
 import Button from "../../Button/Button";
 import Anchor from "../../Button/Anchor";
 import RegisterUserService from "../../../service/userService/registerUserService";
+import RegisterUserInput from "../../Input/RegisterUserInput";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -38,33 +38,15 @@ const RegisterForm = () => {
       <form onSubmit={submitForm}>
         <H2 text="Olá, seja bem-vindo(a) ao Nexus!" />
         <P text="Vamos criar uma conta!?" />
-        <Input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required={true}
-          type="text"
-          placeholder="Nome..."
-        />
-        <Input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required={true}
-          type="email"
-          placeholder="E-mail..."
-        />
-        <Input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required={true}
-          type="password"
-          placeholder="Senha..."
-        />
-        <Input
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required={true}
-          type="password"
-          placeholder="Confirme a senha..."
+        <RegisterUserInput 
+          username={username}
+          setUsername={setUsername}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          confirmPassword={confirmPassword}
+          setConfirmPassword={setConfirmPassword}
         />
         <Button text="Criar conta" />
         <Anchor to="/login-user" text="Já tenho uma conta" />

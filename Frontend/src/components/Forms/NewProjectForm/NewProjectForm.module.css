@@ -1,0 +1,9 @@
+
+.newProjectFormStyle {
+    width: 100%;
+    height: 100vh;
+}
+
+.newProjectFormStyle input {
+    width: 60%;
+}

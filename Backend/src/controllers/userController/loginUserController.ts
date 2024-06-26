@@ -3,9 +3,10 @@ import LoginUserService from "../../service/userService/loginUserService";
 
 class LoginUserController {
   static async loginUserController(req: Request, res: Response) {
-    const loginUserData = req.loginUserDto;
+    const {email, password} = req.body;
+    
     try {
-      const loginUser = await LoginUserService.loginUserService(loginUserData);
+      const loginUser = await LoginUserService.loginUserService(email, password);
       return res.status(200).json({
         message: "Usuário logado com sucesso!",
         user: loginUser,

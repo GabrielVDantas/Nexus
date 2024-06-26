@@ -1,0 +1,32 @@
+.navStyle {
+  background-color: var(--color-2);
+  width: 5%;
+  height: 100vh;
+}
+
+.navStyle ul {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.navStyle li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.navStyle a {
+  all: unset;
+  cursor: pointer;
+}
+
+.iconStyle {
+  font-size: 32px;
+  margin: 0.25rem 0;
+}
+
+.iconStyle:hover {
+  transform: scale(1.1);
+}

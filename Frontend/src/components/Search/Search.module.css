@@ -1,0 +1,8 @@
+.searchStyle input {
+  background-color: transparent;
+  margin: 36px auto;
+  border-radius: var(--border-radius);
+  border: var(--card-border);
+  width: 75%;
+  height: 50px;
+}

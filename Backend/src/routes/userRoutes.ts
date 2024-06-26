@@ -1,24 +1,20 @@
 import { Router } from "express";
 import RegisterUserController from "../controllers/userController/registerUserController";
-import registerUserMiddleware from "../middlewares/dtoMiddlewares/registerUserMiddleware";
 import LoginUserController from "../controllers/userController/loginUserController";
-import loginUserMiddleware from "../middlewares/dtoMiddlewares/loginUserMiddleware";
-import updateUserMiddleware from "../middlewares/dtoMiddlewares/updateUserMiddleware";
+import UpdateUserController from "../controllers/userController/updateUserController";
+import DeleteUserController from "../controllers/userController/deleteUserController";
 
 const userRoutes = Router();
 
 userRoutes.post(
   "/register-user",
-  registerUserMiddleware,
   RegisterUserController.registerUserController
 );
 
-userRoutes.post(
-  "/login-user",
-  loginUserMiddleware,
-  LoginUserController.loginUserController
-);
+userRoutes.post("/login-user", LoginUserController.loginUserController);
 
-userRoutes.put("/update-user", updateUserMiddleware,)
+userRoutes.put("/update-user", UpdateUserController.updateUserController);
+
+userRoutes.delete("/delete-user", DeleteUserController.deleteUserController);
 
 export default userRoutes;

@@ -3,7 +3,8 @@ import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Activate from "./pages/Activate/Activate";
-import Nav from "./components/Nav/Nav";
+import Feed from "./pages/Feed/Feed";
+import Newproject from "./pages/NewProject/Newproject";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Route path="/register-user" element={<Register />} />
         <Route path="/login-user" element={<Login />} />
         <Route path="/activate" element={<Activate />} />
-        <Route path="/feed" element={<Nav />} />
+        <Route path="/feed-projects" element={<Feed />} />
+        <Route path="/new-project" element={<Newproject />} />
       </Routes>
     </BrowserRouter>
   );

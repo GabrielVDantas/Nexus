@@ -3,11 +3,11 @@ import RegisterUserService from "../../service/userService/registerUserService";
 
 class RegisterUserController {
   static async registerUserController(req: Request, res: Response) {
-    const registerUserData = req.registerUserDto;
+    const { username, email, password } = req.body;
+    const file = req.file as Express.Multer.File;
+
     try {
-      const registerUser = await RegisterUserService.registerUserService(
-        registerUserData
-      );
+      const registerUser = await RegisterUserService.registerUserService(username, email, password);
       return res.status(201).json({
         message: "Usuário registrado com sucesso!",
         user: registerUser,

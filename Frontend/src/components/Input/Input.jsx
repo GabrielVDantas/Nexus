@@ -1,15 +1,15 @@
 import styles from "./Input.module.css"
 
-const Input = (props) => {
+const Input = ({value, onChange, type, required, placeholder, multiple}) => {
   return (
     <input
       className={styles.inputStyle}
-      value={props.value}
-      onChange={props.onChange}
-      type={props.type}
-      required={props.required}
-      placeholder={props.placeholder}
-      multiple={props.multiple}
+      value={value}
+      onChange={onChange}
+      type={type}
+      required={required}
+      placeholder={placeholder}
+      multiple={multiple}
     />
   );
 };

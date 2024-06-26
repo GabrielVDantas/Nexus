@@ -5,12 +5,14 @@ import NewProjectService from "../../service/projectService/newProjectService";
 class NewProjectController {
   static async newProjectController(req: Request, res: Response) {
     const userId = req.user.id as Long;
-    const newProjectData = req.newProjectDTO;
+    const { name, description, goal } = req.body;
+    const files = req.files as Express.Multer.File[];
 
     try {
       const newProject = await NewProjectService.newProjectService(
-        userId,
-        newProjectData
+        name,
+        description,
+        goal,
       );
       return res
         .status(201)

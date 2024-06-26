@@ -7,7 +7,6 @@ class GeetFeedProjectsController {
       const feedProjects =
         await GetFeedProjectsService.getFeedProjectsService();
       return res
-        .status(200)
         .json({ message: "Feed enviado com sucesso!", projects: feedProjects });
     } catch (error) {
       return res.status(500).json({

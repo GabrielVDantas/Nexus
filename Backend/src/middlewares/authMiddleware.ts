@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import userRepository from "../../repositories/userRepository";
-import TokenService from "../../service/tokenService/tokenService";
-import UserRepositoryService from "../../repositories/userRepositoryService";
+import TokenService from "../service/tokenService/tokenService";
+import userRepository from "../repositories/userRepository";
+
 
 class AuthMiddleware {
   static async authMiddleware(req: Request, res: Response, next: NextFunction) {
@@ -15,7 +15,7 @@ class AuthMiddleware {
 
     const id = await TokenService.verifyToken(token);
 
-    const user = await UserRepositoryService.getUserById(id);
+    const user = await userRepository.findOneBy({id});
 
     if (!user) {
       return res.status(404).json({ message: "Usuário não encontrado!" });
