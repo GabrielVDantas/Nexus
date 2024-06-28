@@ -17,6 +17,11 @@
   padding: 0.25rem 0;
 }
 
+.navStyle button {
+  all: unset;
+  cursor: pointer;
+}
+
 .navStyle a {
   all: unset;
   cursor: pointer;

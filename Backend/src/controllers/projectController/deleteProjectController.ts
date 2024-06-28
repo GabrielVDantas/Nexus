@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
 import DeleteProjectService from "../../service/projectService/deleteProjectService";
+import { Long } from "typeorm";
 
 class DeleteProjectController {
   static async deleteProjectController(req: Request, res: Response) {
-    const projectId = req.params.projectId as any;
+    const projectId = new Long(req.params.projectId);
 
     try {
         await DeleteProjectService.deleteProjectService(projectId);

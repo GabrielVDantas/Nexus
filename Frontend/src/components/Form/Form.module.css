@@ -1,0 +1,25 @@
+.formContainer,
+.formContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formContainer {
+  justify-content: center;
+  text-align: center;
+}
+
+.formContainer input,
+.formContainer a,
+button {
+  width: 75%;
+}
+
+.formContainer form a,
+button {
+  height: 40px;
+  font-size: 1em;
+  padding: 0 20px;
+  margin-top: 1rem;
+}

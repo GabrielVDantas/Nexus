@@ -1,7 +1,7 @@
-import styles from './Text.module.css';
+import styles from "./Text.module.css";
 
-const P = (props) => {
-  return <p className={styles.pStyle}>{props.text}</p>;
+const P = ({ text }) => {
+  return <p className={styles.pStyle}>{text}</p>
 };
 
 export default P;

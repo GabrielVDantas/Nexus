@@ -23,7 +23,7 @@ class User {
   password: string;
 
   @Column({default: null, type: 'longblob'})
-  photo: Buffer;
+  avatar: Buffer;
 
   @Column({default: null, type: 'text'})
   description: string;

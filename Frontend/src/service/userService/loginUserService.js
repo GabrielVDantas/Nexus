@@ -2,10 +2,10 @@ import TokenService from "../utilService/tokenService";
 import baseUrl from "../utilService/urlService";
 
 class LoginUserService {
-  static async loginUserService(email, password) {
+  static async loginUserService(formData) {
     const response = await baseUrl.post("/login-user", {
-      email,
-      password,
+      email: formData.email,
+      password: formData.password,
     });
 
     await TokenService.setToken(response.data.user.token);

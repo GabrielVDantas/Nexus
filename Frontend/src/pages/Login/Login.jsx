@@ -1,16 +1,8 @@
-import styles from "./Login.module.css";
-import Banner from "../../components/Image/Banner";
-import LoginForm from "../../components/Forms/LoginForm/LoginForm";
+import Outside from "../../components/Outside/Outside";
+import LoginForm from "../../components/Form/LoginForm";
 
-const Register = () => {
-  return (
-    <section className={styles.loginStyle}>
-      <div className={styles.loginBannerStyle}>
-        <Banner />
-      </div>
-      <LoginForm />
-    </section>
-  );
+const Login = () => {
+  return <Outside rightContent={<LoginForm />} />
 };
 
-export default Register;
+export default Login;

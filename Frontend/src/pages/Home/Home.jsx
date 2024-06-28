@@ -1,16 +1,10 @@
-import styles from "./Home.module.css"
-import Welcome from "../../components/Welcome/Welcome";
-import Banner from "../../components/Image/Banner";
+import Outside from '../../components/Outside/Outside'
+import Welcome from '../../components/Welcome/Welcome'
 
 const Home = () => {
   return (
-    <section className={styles.homeStyle}>
-      <Welcome />
-      <div className={styles.homeBannerStyle}>
-        <Banner />
-      </div>
-    </section>
-  );
-};
+    <Outside leftContent={<Welcome />}/>
+  )
+}
 
-export default Home;
+export default Home

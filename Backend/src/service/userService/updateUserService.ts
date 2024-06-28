@@ -9,7 +9,7 @@ class UpdateUserService {
     username: string,
     password: string,
     description: string,
-    photo: Express.Multer.File
+    avatar: Express.Multer.File
   ) {
     const user = await userRepository.findOne({where: { id: userId },}) as User;
 
@@ -21,8 +21,8 @@ class UpdateUserService {
       user.password = encodedPassword;
     }
 
-    const photoAsBuffer = photo.buffer;
-    user.photo = photoAsBuffer ?? user.photo;
+    const avatarAsBuffer = avatar.buffer;
+    user.avatar = avatarAsBuffer ?? user.avatar;
     user.description = description ?? user.description;
 
     return {id: user.id, username: user.username, email: user.email, description: user.description};

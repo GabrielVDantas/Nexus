@@ -6,11 +6,11 @@ class UpdateUserController {
   static async updateUserController(req: Request, res: Response) {
     const userId = req.user.id as Long;
     const { username, password, description} = req.body;
-    const photo = req.file as Express.Multer.File;
+    const avatar = req.file as Express.Multer.File;
 
     try {
       const updatedUser = await UpdateUserService.updateUserService(userId,
-        username, password, description, photo
+        username, password, description, avatar
       );
       return res.json({
         message: "Usuário atualizado com sucesso!",

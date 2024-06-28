@@ -5,6 +5,8 @@ import { LuUserCircle } from "react-icons/lu";
 import Anchor from "../Button/Anchor";
 import { useState } from "react";
 import Button from "../Button/Button";
+import PopUp from "../PopUp/PopUp";
+import NewProjectForm from '../Forms/NewProjectForm/NewProjectForm'
 
 const Nav = () => {
   const [openNewProject, setOpenNewProject] = useState(false);
@@ -19,10 +21,16 @@ const Nav = () => {
           />
         </li>
         <li>
-          <Button text={<LuClipboardEdit className={styles.iconStyle} />}/>
-          <Anchor
-            to="/new-project"
+          <Button
+            onClick={() => {
+              setOpenNewProject(true);
+            }}
             text={<LuClipboardEdit className={styles.iconStyle} />}
+          />
+          <PopUp
+            isOpen={openNewProject}
+            setOpenNewProject={setOpenNewProject}
+            content={<NewProjectForm />}
           />
         </li>
         <li>

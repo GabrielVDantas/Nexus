@@ -1,16 +1,8 @@
-import styles from "./Register.module.css";
-import Banner from "../../components/Image/Banner";
-import RegisterForm from "../../components/Forms/RegisterForm/RegisterForm";
+import Outside from "../../components/Outside/Outside";
+import RegisterForm from "../../components/Form/RegisterForm";
 
 const Register = () => {
-  return (
-    <section className={styles.registerStyle}>
-      <div className={styles.registerBannerStyle}>
-        <Banner />
-      </div>
-      <RegisterForm />
-    </section>
-  );
+  return <Outside rightContent={<RegisterForm />} />
 };
 
 export default Register;

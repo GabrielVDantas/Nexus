@@ -1,4 +1,4 @@
-import styles from "./Welcome.module.css"
+import styles from "./Welcome.module.css";
 import P from "../Text/P";
 import H2 from "../Text/H2";
 import Strong from "../Text/Strong";
@@ -15,8 +15,8 @@ const Welcome = () => {
           tem espaço para crescer e desenvolver os melhores games do mercado!"
       />
       <div className={styles.welcomeAnchorStyle}>
-        <Anchor text="Login" to="/login-user"/>
-        <Anchor text="Cadastro" to="/register-user"/>
+        <Anchor text="Login" to="/login-user" />
+        <Anchor text="Cadastro" to="/register-user" />
       </div>
     </section>
   );

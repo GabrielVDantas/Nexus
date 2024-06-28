@@ -1,7 +1,6 @@
 import styles from "./NewProjectForm.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "../../Input/Input";
 import H2 from "../../Text/H2";
 import P from "../../Text/P";
 import Button from "../../Button/Button";

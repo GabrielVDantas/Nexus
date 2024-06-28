@@ -1,0 +1,30 @@
+.outside,
+.banner,
+.banner img,
+.rightContent,
+.leftContent {
+  width: 100%;
+}
+
+.outside {
+  display: flex;
+  height: 100vh;
+  background-color: var(--color-1);
+}
+
+.banner {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.banner img {
+  height: 100vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.leftContent, .rightContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

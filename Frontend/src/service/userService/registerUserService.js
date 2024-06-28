@@ -2,15 +2,15 @@ import PasswordService from "../utilService/passwordService";
 import baseUrl from "../utilService/urlService";
 
 class RegisterUserService {
-  static async registerUserService(username, email, password, confirmPassword) {
+  static async registerUserService(formData) {
     const registerPassword = await PasswordService.comparePassword(
-      password,
-      confirmPassword
+      formData.password,
+      formData.confirmPassword
     );
 
     const response = await baseUrl.post("/register-user", {
-      username: username,
-      email: email,
+      username: formData.username,
+      email: formData.email,
       password: registerPassword,
     });
 
