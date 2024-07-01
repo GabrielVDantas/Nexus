@@ -1,4 +1,4 @@
-import Outside from '../../components/Outside/Outside'
+import Outside from '../../components/Container/Outside/Outside'
 import Welcome from '../../components/Welcome/Welcome'
 
 const Home = () => {

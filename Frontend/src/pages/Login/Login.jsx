@@ -1,4 +1,4 @@
-import Outside from "../../components/Outside/Outside";
+import Outside from "../../components/Container/Outside/Outside";
 import LoginForm from "../../components/Form/LoginForm";
 
 const Login = () => {

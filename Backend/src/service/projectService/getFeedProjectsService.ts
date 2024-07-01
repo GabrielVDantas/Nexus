@@ -1,5 +1,5 @@
 import projectRepository from "../../repositories/projectRepository";
-import ImageService from "../imageService/imageService";
+import ImageService from "../utilService/imageService";
 
 class GetFeedProjectsService {
   static async getFeedProjectsService() {

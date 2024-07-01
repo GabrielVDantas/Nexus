@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import TokenService from "../service/tokenService/tokenService";
+import TokenService from "../service/utilService/tokenService";
 import userRepository from "../repositories/userRepository";
 
 

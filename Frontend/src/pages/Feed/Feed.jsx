@@ -1,10 +1,9 @@
-import styles from "./Feed.module.css";
 import { useEffect, useState } from "react";
-import Nav from "../../components/Nav/Nav";
-import Card from "../../components/Card/Card";
+import Inside from "../../components/Container/Inside/Inside";
 import GetProjectsService from "../../service/projectService/getProjectsService";
+import Card from "../../components/Card/Card";
 
-const Feed = () => {
+const NewFeed = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -22,13 +21,12 @@ const Feed = () => {
   }, []);
 
   return (
-    <section className={styles.feedStyle}>
-      <Nav />
-      {projects.map((project) => {
-        return <Card key={project.id} project={project} />;
-      })}
-    </section>
+    <Inside
+      rightContent={projects.map((project) => (
+        <Card key={project.id} project={project} />
+      ))}
+    />
   );
 };
 
-export default Feed;
+export default NewFeed;

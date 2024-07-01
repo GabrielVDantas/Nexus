@@ -1,6 +1,6 @@
 import userRepository from "../../repositories/userRepository";
-import PasswordService from "../passwordService/passwordService";
-import TokenService from "../tokenService/tokenService";
+import PasswordService from "../utilService/passwordService";
+import TokenService from "../utilService/tokenService";
 
 class LoginUserService {
   static async loginUserService(email: string, password: string) {

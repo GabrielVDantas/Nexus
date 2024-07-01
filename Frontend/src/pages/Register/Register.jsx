@@ -1,4 +1,4 @@
-import Outside from "../../components/Outside/Outside";
+import Outside from "../../components/Container/Outside/Outside";
 import RegisterForm from "../../components/Form/RegisterForm";
 
 const Register = () => {

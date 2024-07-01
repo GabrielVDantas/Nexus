@@ -1,5 +1,5 @@
 import userRepository from "../../repositories/userRepository";
-import PasswordService from "../passwordService/passwordService";
+import PasswordService from "../utilService/passwordService";
 import User from "../../models/User";
 import { Long } from "typeorm";
 

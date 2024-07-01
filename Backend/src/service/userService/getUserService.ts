@@ -1,5 +1,8 @@
 import { Long } from "typeorm";
 import userRepository from "../../repositories/userRepository";
+import User from "../../models/User";
+import projectRepository from "../../repositories/projectRepository";
+import Project from "../../models/Project";
 
 class GetUserService {
   static async activateUser(userId: Long) {
@@ -14,6 +17,18 @@ class GetUserService {
     await userRepository.save(user);
 
     return user;
+  }
+
+  static async getUserService(userId: Long) {
+    const user = await userRepository.findOneBy({id: userId}) as User;
+
+    const projects = await projectRepository.find({where: {user: user}}) as Project[];
+
+    console.log(projects);
+    
+    console.log(user);
+
+    return { user, projects };
   }
 }
 

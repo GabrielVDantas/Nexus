@@ -4,7 +4,7 @@ import { database } from "./config/database";
 import cors from "cors";
 import indexRouter from "./routes/indexRouter";
 import "reflect-metadata"
-import CategoryService from "./service/categoryService/categoryService";
+import CategoryService from "./service/utilService/categoryService";
 
 dotenv.config();
 

@@ -2,8 +2,6 @@ import jwt from "jsonwebtoken";
 import User from "../../models/User";
 import { Long } from "typeorm";
 
-const tokenPass = process.env.JWT_PASS as string;
-
 type JwtPayLoad = {
     id: Long;
 }

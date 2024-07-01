@@ -6,7 +6,7 @@ import Anchor from "../Button/Anchor";
 import { useState } from "react";
 import Button from "../Button/Button";
 import PopUp from "../PopUp/PopUp";
-import NewProjectForm from '../Forms/NewProjectForm/NewProjectForm'
+import NewProjectForm from "../Forms/NewProjectForm/NewProjectForm";
 
 const Nav = () => {
   const [openNewProject, setOpenNewProject] = useState(false);
@@ -34,7 +34,7 @@ const Nav = () => {
           />
         </li>
         <li>
-          <LuUserCircle className={styles.iconStyle} />
+          <Anchor to={"/profile-user"} text={<LuUserCircle className={styles.iconStyle} />} />
         </li>
       </ul>
     </nav>

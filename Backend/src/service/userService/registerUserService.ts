@@ -1,6 +1,6 @@
 import userRepository from "../../repositories/userRepository";
-import SendMailService from "../mailService/sendMailService";
-import PasswordService from "../passwordService/passwordService";
+import SendMailService from "../utilService/mailService";
+import PasswordService from "../utilService/passwordService";
 
 class RegisterUserService {
   static async registerUserService(username: string, email: string, password: string) {
