@@ -1,4 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+.main-container-config {
+    @apply flex min-h-screen p-6 bg-nexus-darker
+}

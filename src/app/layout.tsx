@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({ 
+  subsets: ["latin"],
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000']
+})
 
 export const metadata: Metadata = {
   title: "Nexus",
   description: "Receba financiamento no Nexus!",
-};
+}
 
 export default function RootLayout({
   children,
@@ -16,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={nunito.className}>{children}</body>
     </html>
-  );
+  )
 }

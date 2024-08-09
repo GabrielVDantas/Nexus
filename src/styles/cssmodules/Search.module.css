@@ -1,0 +1,15 @@
+.search-container-config {
+    @apply px-4 py-3 flex justify-center mx-48
+}
+
+.search-input-box-config {
+    @apply flex items-center min-w-full bg-nexus-black px-6 rounded
+}
+
+.search-icon-config {
+    @apply size-4 text-nexus-gray
+}
+
+.search-input-config {
+    @apply max-w-full bg-nexus-black border-none text-nexus-white
+}

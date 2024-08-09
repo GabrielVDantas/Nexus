@@ -1,0 +1,19 @@
+.aside-container-config {
+    @apply p-6 rounded px-6 py-6 flex flex-col items-center gap-6 bg-nexus-black shadow-lg
+}
+
+.aside-logo-config {
+    @apply flex flex-col items-center gap-2 cursor-pointer
+}
+
+.aside-icon-container-config {
+    @apply flex flex-col items-center gap-2 text-nexus-gray hover:text-nexus-white cursor-pointer
+}
+
+.aside-icon-config {
+    @apply hover:bg-transparent hover:text-nexus-white
+}
+
+.aside-icon-text-config {
+    @apply text-xs
+}

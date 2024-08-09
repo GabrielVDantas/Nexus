@@ -18,6 +18,16 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        nexus: {
+          black: "#171D1F",
+          darker: "#090E10",
+          red: "#FD0028",
+          ruby: "#960008",
+          white: "#FFFFFF",
+          gray: "#888888",
+        },
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
