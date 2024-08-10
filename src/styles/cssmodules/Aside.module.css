@@ -1,5 +1,13 @@
 .aside-container-config {
-    @apply p-6 rounded px-6 py-6 flex flex-col items-center gap-6 bg-nexus-black shadow-lg
+    @apply fixed top-4 bottom-4 max-h-screen overflow-y-auto p-6 bg-nexus-black rounded flex flex-col items-center gap-6 w-40
+}
+
+.aside-left-container-config {
+    @apply aside-container-config right-4 
+}
+
+.aside-right-container-config {
+    @apply aside-container-config left-4
 }
 
 .aside-logo-config {
@@ -7,7 +15,7 @@
 }
 
 .aside-icon-container-config {
-    @apply flex flex-col items-center gap-2 text-nexus-gray hover:text-nexus-white cursor-pointer
+    @apply flex flex-col items-center text-center gap-2 text-nexus-gray hover:text-nexus-white cursor-pointer
 }
 
 .aside-icon-config {

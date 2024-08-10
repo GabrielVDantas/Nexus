@@ -1,5 +1,5 @@
 .search-container-config {
-    @apply px-4 py-3 flex justify-center mx-48
+    @apply px-4 pt-4 flex justify-center mx-72 
 }
 
 .search-input-box-config {
@@ -11,5 +11,5 @@
 }
 
 .search-input-config {
-    @apply max-w-full bg-nexus-black border-none text-nexus-white
+    @apply max-w-full bg-nexus-black border-none text-nexus-white focus:ring-0
 }

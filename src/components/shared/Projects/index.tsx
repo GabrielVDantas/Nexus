@@ -2,15 +2,16 @@ import React from 'react'
 import Search from "../Search";
 import Post from "../Post";
 
-const Feed = () => {
+const Projects = () => {
     return (
         <section className="flex-1 flex flex-col">
             <Search />
-            <article className="flex justify-center mx-48 px-4 py-3">
+            <article className="flex flex-col justify-center mx-72 px-4 py-3">
+                <Post />
                 <Post />
             </article>
         </section>
     )
 }
 
-export default Feed
+export default Projects

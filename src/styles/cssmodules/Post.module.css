@@ -1,3 +1,3 @@
 .post-container-config {
-    @apply bg-nexus-black border-none rounded px-6 min-w-full text-nexus-white
+    @apply bg-nexus-black border-none rounded px-6 my-4 min-w-full text-nexus-white 
 }

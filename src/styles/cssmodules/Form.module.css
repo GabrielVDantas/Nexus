@@ -1,0 +1,37 @@
+.form-container-config {
+    @apply rounded bg-nexus-black border-none
+}
+
+.form-title-config {
+    @apply text-center text-nexus-red font-semibold text-3xl
+}
+
+.form-description-config {
+    @apply text-center text-nexus-gray text-base
+}
+
+.form-label-config {
+    @apply text-nexus-red
+}
+
+.form-items-config {
+    @apply bg-nexus-darker border-none border-0 text-nexus-gray 
+    rounded focus:border-none focus:border-0 focus:text-nexus-white 
+}
+
+.form-input-config {
+    @apply form-items-config focus:ring-0
+}
+
+.form-input-file-config {
+    @apply form-input-config hover:cursor-pointer text-nexus-gray
+}
+
+.form-textarea-config {
+    @apply form-items-config h-52 focus:ring-0
+}
+
+.form-submit-button-config {
+    @apply bg-nexus-red border-2 border-nexus-red bg-transparent rounded text-nexus-red
+    hover:bg-nexus-red hover:text-nexus-black mt-3
+}
