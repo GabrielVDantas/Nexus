@@ -1,0 +1,13 @@
+.form-items-config {
+    @apply bg-nexus-darker border-none border-0 text-nexus-gray 
+    rounded focus:border-none focus:border-0 focus:text-nexus-white 
+}
+
+.form-input-config {
+    @apply form-items-config focus:ring-0 w-full
+}
+
+.form-submit-button-config {
+    @apply bg-nexus-red border-2 border-nexus-red bg-transparent rounded text-nexus-red
+    hover:bg-nexus-red hover:text-nexus-black mt-12 ml-6 w-32
+}
