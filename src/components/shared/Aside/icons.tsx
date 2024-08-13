@@ -3,19 +3,19 @@ import { ArrowLeftEndOnRectangleIcon, BookmarkIcon, EnvelopeIcon, HomeIcon,
     TrashIcon, TrophyIcon, WrenchScrewdriverIcon, BellIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
 
 export const plataformRelatedIcons = [
-    { id: 1, svg: <SquaresPlusIcon className="size-6" />, span: "Novo projeto" },
-    { id: 2, svg: <HomeIcon className="size-6" />, span: "Início" },
-    { id: 3, svg: <MagnifyingGlassIcon className="size-6" />, span: "Pesquisar projeto" },
-    { id: 4, svg: <TrophyIcon className="size-6" />, span: "Melhores da plataforma" },
-    { id: 5, svg: <BookmarkIcon className="size-6" />, span: "Destaques da semana" },
-    { id: 6, svg: <WrenchScrewdriverIcon className="size-6" />, span: "Erros e sugestões" },
+    { id: 1, svg: <SquaresPlusIcon className="size-6" />, span: "Novo projeto", to: '/new-project' },
+    { id: 2, svg: <HomeIcon className="size-6" />, span: "Início", to: '/' },
+    { id: 3, svg: <MagnifyingGlassIcon className="size-6" />, span: "Pesquisar projeto", to: '/' },
+    { id: 4, svg: <TrophyIcon className="size-6" />, span: "Melhores da plataforma", to: '/' },
+    { id: 5, svg: <BookmarkIcon className="size-6" />, span: "Destaques da semana", to: '/' },
+    { id: 6, svg: <WrenchScrewdriverIcon className="size-6" />, span: "Erros e sugestões", to: '/' },
 ]
 
 export const userRelatedIcons = [
-    { id: 6, svg: <Squares2X2Icon className="size-6" />, span: "Meus projetos" },
-    { id: 7, svg: <IdentificationIcon className="size-6" />, span: "Minhas informações" },
-    { id: 8, svg: <BellIcon className="size-6" />, span: "Notificações" },
-    { id: 9, svg: <InformationCircleIcon className="size-6" />, span: "Sobre nós" },
-    { id: 11, svg: <ArrowLeftEndOnRectangleIcon className="size-6" />, span: "Sair" },
-    { id: 10, svg: <TrashIcon className="size-6" />, span: "Deletar conta" },
+    { id: 6, svg: <Squares2X2Icon className="size-6" />, span: "Meus projetos", to: '/my-projects' },
+    { id: 7, svg: <IdentificationIcon className="size-6" />, span: "Minhas informações", to: '/my-profile' },
+    { id: 8, svg: <BellIcon className="size-6" />, span: "Notificações", to: '/' },
+    { id: 9, svg: <InformationCircleIcon className="size-6" />, span: "Sobre nós", to: '/' },
+    { id: 11, svg: <ArrowLeftEndOnRectangleIcon className="size-6" />, span: "Sair", to: '/' },
+    { id: 10, svg: <TrashIcon className="size-6" />, span: "Deletar conta", to: '/' },
 ]

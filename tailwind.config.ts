@@ -26,6 +26,7 @@ const config = {
           ruby: "#960008",
           white: "#FFFFFF",
           gray: "#888888",
+          bl: "#010719"
         },
       },
       keyframes: {
