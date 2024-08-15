@@ -26,7 +26,13 @@ const config = {
           ruby: "#960008",
           white: "#FFFFFF",
           gray: "#888888",
-          bl: "#010719"
+          discord: {
+            blue: '#5865F2',
+            white: '#FFFFFF'
+          },
+          google: {
+            white: '#FFFFFF'
+          }
         },
       },
       keyframes: {

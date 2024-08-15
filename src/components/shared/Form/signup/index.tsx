@@ -1,37 +1,44 @@
 'use client'
-import React from 'react'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import React from 'react'
+import useFormSignup, { TypeSignupFormSchema } from './schema'
 import { Input } from '@/components/ui/input'
-import useFormSignin, { TypeSigninFormSchema } from './schema'
 import styles from '../../../../styles/cssmodules/Form.module.css'
 import { Button } from '@/components/ui/button'
-import { signIn } from 'next-auth/react'
+import { signupRequest } from '@/utils/userRequests/userRequests'
 
-const SigninForm = () => {
+const SignupForm = () => {
 
-    const form = useFormSignin()
+    const form = useFormSignup()
 
-    const submitForm = async (data: TypeSigninFormSchema) => {
+    const submitForm = async (data: TypeSignupFormSchema) => {
         try {
-            const response = await signIn('credentials', {
-                redirect: false,
-                email: data.email,
-                password: data.password,
-            })
-            if (response && response.ok) {
-                alert('Login bem sucedido')
-            } else {
-                alert('Algo deu errado')
-            }
+            const response = await signupRequest(data)
         } catch (error) {
             throw error
         }
-
     }
 
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(submitForm)}>
+                <FormField
+                    control={form.control}
+                    name='username'
+                    render={({ field }) => (
+                        <FormItem className='mt-4'>
+                            <FormLabel className='text-nexus-red'>Nome:</FormLabel>
+                            <FormControl>
+                                <Input
+                                    {...field}
+                                    type='text'
+                                    placeholder='Seu nome aqui...'
+                                    className={styles['form-input-config']} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
                 <FormField
                     control={form.control}
                     name='email'
@@ -61,10 +68,10 @@ const SigninForm = () => {
                 <Button
                     type='submit'
                     className={`${styles['form-submit-button-config']} w-full mt-7`}>
-                    Entar</Button>
+                    Criar conta</Button>
             </form>
         </Form>
     )
 }
 
-export default SigninForm
+export default SignupForm

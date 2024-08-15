@@ -4,7 +4,7 @@ import { updateEmailFormData } from '../schema'
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import CustomDialog from '../../Dialog'
+import Modal from '../../Modal'
 import styles from '../../../../styles/cssmodules/Profile.module.css'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
@@ -13,7 +13,7 @@ const FileForm = () => {
     const form = updateEmailFormData()
 
     return (
-        <CustomDialog
+        <Modal
             showedContent={
                 <Button className='size-44 rounded-full'>
                     <Avatar className='size-44'>

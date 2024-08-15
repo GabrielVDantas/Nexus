@@ -1,15 +1,15 @@
-.dialog-container-config {
+.modal-container-config {
     @apply flex flex-col items-center mt-4
 }
 
-.dialog-card-config {
+.modal-card-config {
     @apply sm:max-w-[425px] bg-nexus-black border-none
 }
 
-.dialog-title-config {
+.modal-title-config {
     @apply text-center text-nexus-red font-semibold text-2xl
 }
 
-.dialog-description-config {
+.modal-description-config {
     @apply text-center text-nexus-gray text-base
 }

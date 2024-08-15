@@ -1,0 +1,25 @@
+.button-submit-config {
+    @apply border-2 bg-transparent rounded
+}
+
+.button-discord-config {
+    @apply button-submit-config border-nexus-discord-blue text-nexus-discord-blue
+    hover:bg-nexus-discord-blue hover:text-nexus-discord-white
+}
+
+.disc-logo {
+    @apply max-h-4
+}
+
+.button-discord-config:hover {
+    content: url('/discord-logo-white.svg');
+}
+
+.button-google-config {
+    @apply button-submit-config border-nexus-google-white
+    hover:bg-nexus-google-white hover:text-nexus-discord-white
+}
+
+.google-logo {
+    @apply max-h-4
+}

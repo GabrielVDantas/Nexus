@@ -8,25 +8,25 @@ import {
     DialogTrigger
 } from '@/components/ui/dialog'
 import React from 'react'
-import styles from '../../../styles/cssmodules/Dialog.module.css'
+import styles from '../../../styles/cssmodules/Modal.module.css'
 
 
-interface CustomDialogProps {
+interface ModalProps {
     showedContent: React.ReactNode,
     middleContent: React.ReactNode,
     footerContent: React.ReactNode,
 }
 
-const CustomDialog = ({ showedContent, middleContent, footerContent }: CustomDialogProps) => {
+const Modal = ({ showedContent, middleContent, footerContent }: ModalProps) => {
     return (
         <Dialog>
-            <DialogTrigger asChild className={styles['dialog-container-config']}>
+            <DialogTrigger asChild className={styles['modal-container-config']}>
                 {showedContent}
             </DialogTrigger>
-            <DialogContent className={styles['dialog-card-config']}>
+            <DialogContent className={styles['modal-card-config']}>
                 <DialogHeader>
-                    <DialogTitle className={styles['dialog-title-config']}>Avatar: </DialogTitle>
-                    <DialogDescription className={styles['dialog-description-config']}>
+                    <DialogTitle className={styles['modal-title-config']}>Avatar: </DialogTitle>
+                    <DialogDescription className={styles['modal-description-config']}>
                         Escolha um novo avatar e salve para alterá-lo
                     </DialogDescription>
                 </DialogHeader>
@@ -39,4 +39,4 @@ const CustomDialog = ({ showedContent, middleContent, footerContent }: CustomDia
     )
 }
 
-export default CustomDialog
+export default Modal
