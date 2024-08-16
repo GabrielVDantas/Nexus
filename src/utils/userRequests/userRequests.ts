@@ -1,4 +1,4 @@
-import { TypeSignupFormSchema } from "@/components/shared/Form/signup/schema";
+import { TypeSignupFormSchema } from "@/app/auth/signup/_components/schema";
 import axios from 'axios'
 
 export const signupRequest = async (data: TypeSignupFormSchema) => {

@@ -1,12 +1,12 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import React from 'react'
-import styles from '../../../styles/cssmodules/Post.module.css'
+import postStyles  from '../../../../styles/cssmodules/Post.module.css'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 const Post = () => {
     return (
-        <Card className={styles['post-container-config']}>
+        <Card className={postStyles['post-container-config']}>
             <CardHeader>
                 <figure><img src="https://ayltoninacio.com.br/img/p/147w750.jpg" alt='Conteúdo' /></figure>
             </CardHeader>

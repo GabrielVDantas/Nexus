@@ -1,0 +1,31 @@
+.card-middle-card-config {
+    @apply w-3/5 py-4 h-full bg-nexus-black rounded flex
+}
+
+.card-left-content-config {
+    @apply w-2/4 bg-nexus-darker ml-6 mr-3 rounded
+}
+
+.card-right-content-config {
+    @apply w-2/4 mr-6 ml-3
+}
+
+.card-auth-image-config {
+    @apply w-full h-full object-cover
+}
+
+.card-auth-form-card-config {
+    @apply h-full bg-nexus-black border-none
+}
+
+.card-auth-title-config {
+    @apply text-nexus-red font-semibold text-3xl
+}
+
+.card-auth-description-config {
+    @apply text-nexus-gray text-base
+}
+
+.card-auth-footer-config {
+    @apply text-nexus-gray text-base font-light
+}

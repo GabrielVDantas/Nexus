@@ -13,6 +13,9 @@ const signupFormSchema = z.object({
     password: z
         .string({ message: 'O campo "Senha" é obrigatório' })
         .min(6, { message: 'Use uma senha que possue no mínimo 6 caracteres' }),
+    terms: z
+        .boolean({ message: 'Você deve aceitar os termos e condições' })
+        .refine(val => val === true, {message: 'Você deve aceitar os termos e condições'})
 })
 
 export type TypeSignupFormSchema = z.infer<typeof signupFormSchema>

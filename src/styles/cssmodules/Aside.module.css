@@ -3,23 +3,19 @@
 }
 
 .aside-left-container-config {
-    @apply aside-container-config right-4 
+    @apply aside-container-config left-4 
 }
 
 .aside-right-container-config {
-    @apply aside-container-config left-4
+    @apply aside-container-config right-4
 }
 
 .aside-logo-config {
     @apply flex flex-col items-center gap-2 cursor-pointer
 }
 
-.aside-icon-container-config {
+.aside-icon-link-config {
     @apply flex flex-col items-center text-center gap-2 text-nexus-gray hover:text-nexus-white cursor-pointer
-}
-
-.aside-icon-config {
-    @apply hover:bg-transparent hover:text-nexus-white
 }
 
 .aside-icon-text-config {

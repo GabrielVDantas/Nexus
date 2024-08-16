@@ -17,7 +17,7 @@ const Profile = ({ username }: UserData) => {
                     <CardTitle className="text-nexus-red text-center font-semibold text-3xl">
                         Olá, {username}</CardTitle>
                     <CardDescription className="text-center text-nexus-gray text-base">
-                        Este é o seu perfil, abaixo você verá suas informações</CardDescription>
+                        Este é o seu perfil. Essas são suas informações</CardDescription>
                     <CardContent className='flex flex-col items-center'>
                         <FileForm />
                         <NoFileForm 

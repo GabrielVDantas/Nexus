@@ -5,3 +5,8 @@
 .main-container-config {
     @apply flex min-h-screen bg-nexus-darker
 }
+
+.home-link-config {
+    @apply border-2 border-nexus-red bg-transparent rounded text-nexus-red
+    hover:bg-nexus-red hover:text-nexus-black mt-3 w-full py-1 flex justify-center items-center
+}
