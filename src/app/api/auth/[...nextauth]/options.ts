@@ -29,7 +29,7 @@ export const authOptions = {
 
                 if (!isPasswordCorrect) return null
 
-                const { password:_, avatar:__, ...loggedUser} = isUserRegistered
+                const { password: _, avatar: __, ...loggedUser } = isUserRegistered
 
                 return loggedUser
             }
@@ -38,41 +38,10 @@ export const authOptions = {
             clientId: process.env.DISCORD_ID!,
             clientSecret: process.env.DISCORD_SECRET!,
         }),
-        // GoogleProvider({
-        //     clientId: process.env.GOOGLE_ID!,
-        //     clientSecret: process.env.GOOGLE_SECRET!,
-
-        //     authorization: {
-        //         params: {
-        //             prompt: 'consent',
-        //             access_type: 'offline',
-        //             response_type: 'code'
-        //         }
-        //     }
-        // })
+        GoogleProvider({
+            clientId: process.env.GOOGLE_ID!,
+            clientSecret: process.env.GOOGLE_SECRET!
+        })
     ],
-    // session: {
-    //     strategy: 'jwt'
-    // },
-    // callbacks: {
-    //     async signIn(account: any, profile: any) {
-    //         if (!profile?.email) throw new Error("Perfil não encontrado!");
-
-    //         await prisma.user.upsert({
-    //             where: {
-    //                 email: profile.email,
-    //             },
-    //             create: {
-    //                 username: profile.name,
-    //                 email: profile.email,
-    //             },
-    //             update: {
-    //                 email: profile.email,
-    //             }
-    //         })
-
-    //         return true
-    //     }
-    // }
 
 }

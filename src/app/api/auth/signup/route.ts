@@ -22,9 +22,9 @@ export const POST = async (req: NextRequest) => {
             }
         })
 
-        const { password: _, avatar:__, ...userToReturn } = userSavedOnDb
+        const { password: _, avatar:__, ...userWithoutPasswordAndAvatar } = userSavedOnDb
 
-        return NextResponse.json({ user: userToReturn }, { status: 201 })
+        return NextResponse.json({ user: userWithoutPasswordAndAvatar }, { status: 201 })
     } catch (error) {
         return NextResponse.json({ message: 'Erro ao registrar usuário ' }, { status: 500 })
     }
