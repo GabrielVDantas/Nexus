@@ -13,19 +13,20 @@ interface Props {
 
 const ScreenshotsCarousel = ({ screenshots }: Props) => {
     return (
-        <Carousel className="w-full max-w-5xl">
+        <Carousel className="max-w-5xl pt-6">
             <CarouselContent>
                 {screenshots.map((screenshot) => (
                     <CarouselItem>
-                        <div className="p-1">
-                            <Card>
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
-                                    <span className="text-4xl font-semibold">
-                                        <figure><img src={screenshot} alt='Screenshots do projeto'/></figure>
-                                    </span>
+                            <Card className="h-fit border-none rounded">
+                                <CardContent className="flex items-center justify-center m-0 p-0">
+                                        <figure className="w-full h-full object-cover">
+                                            <img
+                                                src={screenshot}
+                                                alt='Screenshots do projeto'
+                                                className="w-full h-full object-cover rounded" />
+                                        </figure>
                                 </CardContent>
                             </Card>
-                        </div>
                     </CarouselItem>
                 ))}
             </CarouselContent>

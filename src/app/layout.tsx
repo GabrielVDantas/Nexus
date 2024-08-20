@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "../styles/globals.css";
+import SessionWrapper from "@/components/Session";
 
-const nunito = Nunito({ 
+const nunito = Nunito({
   subsets: ["latin"],
   weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000']
 })
@@ -18,8 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body className={nunito.className}>{children}</body>
-    </html>
+    <SessionWrapper>
+      <html lang="pt-br">
+        <body className={nunito.className}>{children}</body>
+      </html>
+    </SessionWrapper>
+
   )
 }

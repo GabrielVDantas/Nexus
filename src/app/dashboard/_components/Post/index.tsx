@@ -1,7 +1,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import React from 'react'
 import postStyles from '../../../../styles/cssmodules/Post.module.css'
-import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import MoreInformation from './_components/Modal'
 
@@ -25,14 +24,14 @@ const Post = ({ project }: Props) => {
                 <figure><img src={project.coverArt} alt='Imagem de capa do projeto' className='rounded'/></figure>
             </CardHeader>
             <CardContent>
-                <CardTitle>{project.name}</CardTitle>
+                <CardTitle className='text-nexus-red font-semibold text-2xl'>{project.name}</CardTitle>
                 <CardDescription className='flex flex-col'>
                     <span>{project.partialDescription}</span>
-                    <span>Meta financeira: {project.goal}</span>
+                    <span className='text-nexus-white font-bold mt-2'>Meta financeira: {project.goal}</span>
                    <MoreInformation project={project} />
                 </CardDescription>
             </CardContent>
-            <CardFooter>
+            <CardFooter className='-mt-4'>
                 <Avatar>
                     <AvatarImage src={project.avatar} alt="Avatar do usuário" />
                     <AvatarFallback>{project.username}</AvatarFallback>

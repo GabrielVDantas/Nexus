@@ -10,7 +10,7 @@ const DashboardLayout = ({ children }: Props) => {
     return (
         <main className='main-container-config'>
             <Aside icons={plataformRelatedIcons} position='left' />
-            <section className="flex flex-col">
+            <section className="flex flex-col w-full">
                 {children}
             </section>
             <Aside icons={userRelatedIcons} position='right' />

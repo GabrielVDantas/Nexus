@@ -8,14 +8,14 @@ export const plataformRelatedIcons = [
     { id: 3, svg: <MagnifyingGlassIcon className="size-6" />, span: "Pesquisar projeto", to: '/dashboard' },
     { id: 4, svg: <TrophyIcon className="size-6" />, span: "Melhores da plataforma", to: '/' },
     { id: 5, svg: <BookmarkIcon className="size-6" />, span: "Destaques da semana", to: '/' },
-    { id: 6, svg: <WrenchScrewdriverIcon className="size-6" />, span: "Erros e sugestões", to: '/' },
+    { id: 6, svg: <InformationCircleIcon className="size-6" />, span: "Sobre nós", to: '/dashboard/about' },
+    { id: 7, svg: <WrenchScrewdriverIcon className="size-6" />, span: "Erros e sugestões", to: '/dashboard/sugestions' },
 ]
 
 export const userRelatedIcons = [
-    { id: 6, svg: <Squares2X2Icon className="size-6" />, span: "Meus projetos", to: '/dashboard/my-projects' },
-    { id: 7, svg: <IdentificationIcon className="size-6" />, span: "Minhas informações", to: '/dashboard/my-profile' },
-    { id: 8, svg: <BellIcon className="size-6" />, span: "Notificações", to: '/' },
-    { id: 9, svg: <InformationCircleIcon className="size-6" />, span: "Sobre nós", to: '/' },
+    { id: 8, svg: <Squares2X2Icon className="size-6" />, span: "Meus projetos", to: '/dashboard/my-projects' },
+    { id: 9, svg: <IdentificationIcon className="size-6" />, span: "Minhas informações", to: '/dashboard/my-profile' },
+    { id: 10, svg: <BellIcon className="size-6" />, span: "Notificações", to: '/' },
     { id: 11, svg: <ArrowLeftEndOnRectangleIcon className="size-6" />, span: "Sair", to: '/' },
-    { id: 10, svg: <TrashIcon className="size-6" />, span: "Deletar conta", to: '/' },
+    { id: 12, svg: <TrashIcon className="size-6" />, span: "Deletar conta", to: '/' },
 ]

@@ -3,7 +3,10 @@ import React from 'react'
 
 const MyProfilePage = () => {
   return (
-    <Profile username="Gabriel"/>  
+    <section className='mx-72 py-4 min-h-full flex items-center justify-center'>
+      <Profile username="Gabriel" />
+    </section>
+
   )
 }
 

@@ -29,9 +29,9 @@ export const authOptions = {
 
                 if (!isPasswordCorrect) return null
 
-                const { password: _, avatar: __, ...loggedUser } = isUserRegistered
+                const { password: _, avatar: __, ...userWithoutPasswordAndAvatar } = isUserRegistered
 
-                return loggedUser
+                return userWithoutPasswordAndAvatar
             }
         }),
         DiscordProvider({
