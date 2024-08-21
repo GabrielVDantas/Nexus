@@ -1,6 +1,6 @@
 import Aside from "./_components/Aside"
 import { plataformRelatedIcons, userRelatedIcons } from "./_components/Aside/icons"
-import '../../styles/globals.css'
+import '../../../styles/globals.css'
 
 interface Props {
     children: React.ReactNode

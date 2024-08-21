@@ -1,7 +1,7 @@
 import { Input } from '@/components/ui/input'
 import React from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import searchStyles from '../../../../styles/cssmodules/Search.module.css'
+import searchStyles from '../../../../../styles/cssmodules/Search.module.css'
 
 const Search = () => {
     return (

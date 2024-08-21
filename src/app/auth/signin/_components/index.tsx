@@ -6,8 +6,11 @@ import useFormSignin, { TypeSigninFormSchema } from './schema'
 import styles from '../../../../styles/cssmodules/Form.module.css'
 import { Button } from '@/components/ui/button'
 import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const SigninForm = () => {
+
+    const router = useRouter()
 
     const form = useFormSignin()
 
@@ -19,7 +22,7 @@ const SigninForm = () => {
                 password: data.password,
             })
             if (response && response.ok) {
-                alert('Login bem sucedido')
+                router.replace('/dashboard')
             } else {
                 alert('Algo deu errado')
             }

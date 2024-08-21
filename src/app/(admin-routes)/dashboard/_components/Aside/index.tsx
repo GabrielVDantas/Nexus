@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from 'react'
-import asideStyles from '../../../../styles/cssmodules/Aside.module.css'
+import asideStyles from '../../../../../styles/cssmodules/Aside.module.css'
 import Link from "next/link"
 
 interface AsideProps {

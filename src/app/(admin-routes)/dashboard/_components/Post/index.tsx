@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import React from 'react'
-import postStyles from '../../../../styles/cssmodules/Post.module.css'
+import postStyles from '../../../../../styles/cssmodules/Card.module.css'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import MoreInformation from './_components/Modal'
 

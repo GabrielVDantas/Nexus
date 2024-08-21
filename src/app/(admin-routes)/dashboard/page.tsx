@@ -1,7 +1,10 @@
-'use client'
-import Post from '@/app/dashboard/_components/Post'
-import Search from '@/app/dashboard/_components/Search'
-import { useSession } from 'next-auth/react'
+
+import Post from '@/app/(admin-routes)/dashboard/_components/Post'
+import Search from '@/app/(admin-routes)/dashboard/_components/Search'
+import { authOptions } from '@/app/api/auth/[...nextauth]/options'
+import { getServerSession } from 'next-auth'
+import { signOut } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const posts = [
@@ -35,20 +38,22 @@ const posts = [
     }
 ]
 
-const Dashboard = () => {
-    const { data: session, status } = useSession()
+const Dashboard = async () => {
+    
+    // const session = await getServerSession(authOptions)
+
+    // const router = useRouter()
+
+    // async function logout() {
+    //     await signOut({
+    //         redirect: false
+    //     })
+
+    //     router.replace('/')
+    // }
 
     
-    if (status === 'loading') {
-        return <p className='font-semibold text-7xl text-yellow-500'>Carregando...</p>
-    }
 
-    
-    if (status === 'unauthenticated') {
-        return <h2 className='font-semibold text-7xl text-yellow-500'>VOCÊ NÃO ESTÁ LOGADO!!!!!</h2>
-    }
-
-    
     return (
         <>
             <Search />

@@ -6,10 +6,10 @@ interface Props {
     children: React.ReactNode
 }
 
-const SessionWrapper = ({ children }: Props) => {
+const NextAuthSessionProvider = ({ children }: Props) => {
     return (
         <SessionProvider>{children}</SessionProvider>
     )
 }
 
-export default SessionWrapper
+export default NextAuthSessionProvider
