@@ -36,13 +36,13 @@ const AuthCard = ({ title, description, content }: Props) => {
                     <CardFooter className='flex flex-col text-center'>
                         <p className={cardStyles['card-auth-footer-config']}>ou continue com...</p>
                         <Button
-                            onClick={() => signIn('discord')}
+                            onClick={() => signIn('discord', { callbackUrl: '/dashboard' })}
                             className={`${buttonStyles['button-discord-config']} w-full mt-4`}>
                             <img src='/discord-logo-blue.svg' className={buttonStyles['disc-logo']} />
                         </Button>
                         <Button
-                            onClick={() => signIn('google')}
-                            className={`${buttonStyles['button-google-config']} w-full mt-4`}>
+                            onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
+                            className={`${buttonStyles['button-google-config']} w-full mt-4`} >
                             <img src='/google-logo.svg' className={buttonStyles['google-logo']} />
                         </Button>
                     </CardFooter>

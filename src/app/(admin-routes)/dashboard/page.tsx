@@ -1,11 +1,9 @@
 
 import Post from '@/app/(admin-routes)/dashboard/_components/Post'
 import Search from '@/app/(admin-routes)/dashboard/_components/Search'
-import { authOptions } from '@/app/api/auth/[...nextauth]/options'
+import { options } from '@/app/api/auth/[...nextauth]/options'
 import { getServerSession } from 'next-auth'
-import { signOut } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
-import React from 'react'
+import Link from 'next/link'
 
 const posts = [
     {
@@ -39,31 +37,32 @@ const posts = [
 ]
 
 const Dashboard = async () => {
-    
-    // const session = await getServerSession(authOptions)
 
-    // const router = useRouter()
+    const session = await getServerSession(options)
+    console.log(session)
 
-    // async function logout() {
-    //     await signOut({
-    //         redirect: false
-    //     })
-
-    //     router.replace('/')
-    // }
-
-    
-
-    return (
-        <>
-            <Search />
-            <article className="mx-72 px-4 py-3">
-                {posts.map((post) => (
-                    <Post key={post.id} project={post} />
-                ))}
-            </article>
-        </>
-    )
+    if (session) {
+        return (
+            <>
+                <Search />
+                <article className="mx-72 px-4 py-3">
+                    {posts.map((post) => (
+                        <Post key={post.id} project={post} />
+                    ))}
+                </article>
+            </>
+        )
+    } else {
+        return (
+            <>
+                <h6 className='font-extrabold text-7xl text-nexus-red'>ERRO 403...</h6>
+                <p className='text-nexus-gray'>
+                    Você não tem permissão para acessar essa página. Crie uma conta ou efetue seu login!
+                </p>
+                <Link href='/'>Ir à página inicial</Link>
+            </>
+        )
+    }
 }
 
 export default Dashboard

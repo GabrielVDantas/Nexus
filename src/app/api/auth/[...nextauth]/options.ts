@@ -3,8 +3,10 @@ import DiscordProvider from 'next-auth/providers/discord'
 import GoogleProvider from 'next-auth/providers/google'
 import prisma from '../../../../lib/db'
 import { compare } from 'bcrypt'
+import { PrismaAdapter } from '@auth/prisma-adapter'
 
-export const authOptions = {
+export const options = {
+    adapter: PrismaAdapter(prisma),
     providers: [
         CredentialProvider({
             name: "credentials",
@@ -25,7 +27,7 @@ export const authOptions = {
 
                 if (!isUserRegistered) return null
 
-                const isPasswordCorrect = await compare(password, isUserRegistered.password)
+                const isPasswordCorrect = await compare(password, isUserRegistered.password as string)
 
                 if (!isPasswordCorrect) return null
 
@@ -43,17 +45,4 @@ export const authOptions = {
             clientSecret: process.env.GOOGLE_SECRET!
         })
     ],
-    pages: {
-        signIn: '/auth/signin'
-    },
-    callbacks: {
-        async jwt({ token, user }: any) {
-            user && (user.token = user)
-            return token
-        },
-        async session({session, token}: any) {
-            session = token.user
-            return session
-        }
-    }
 }

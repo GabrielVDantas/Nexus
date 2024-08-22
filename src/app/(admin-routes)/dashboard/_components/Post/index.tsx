@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import React from 'react'
-import postStyles from '../../../../../styles/cssmodules/Card.module.css'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import MoreInformation from './_components/Modal'
 
@@ -19,8 +18,8 @@ interface Props {
 
 const Post = ({ project }: Props) => {
     return (
-        <Card className={postStyles['post-container-config']}>
-            <CardHeader>
+        <Card className='bg-nexus-black border-none rounded px-6 my-4 min-w-full text-nexus-white '>
+            <CardHeader className='flex items-center'>
                 <figure><img src={project.coverArt} alt='Imagem de capa do projeto' className='rounded'/></figure>
             </CardHeader>
             <CardContent>
