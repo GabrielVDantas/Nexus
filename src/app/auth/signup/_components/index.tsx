@@ -28,7 +28,7 @@ const SignupForm = () => {
                     control={form.control}
                     name='username'
                     render={({ field }) => (
-                        <FormItem className='mt-2'>
+                        <FormItem>
                             <FormLabel className='text-nexus-red'>Nome:</FormLabel>
                             <FormControl>
                                 <Input

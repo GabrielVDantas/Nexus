@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-const signupFormSchema = z.object({
+export const signupFormSchema = z.object({
     username: z
         .string({ message: 'O campo "Nome" é obrigatório' })
         .min(1, { message: 'O campo "Nome" é obrigatório' }),

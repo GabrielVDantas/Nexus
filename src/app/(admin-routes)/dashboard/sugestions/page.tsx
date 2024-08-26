@@ -6,7 +6,6 @@ const SugestionsPage = () => {
     return (
         <section className='mx-72 py-4 min-h-full flex items-center justify-center'>
             <Card className='rounded bg-nexus-black border-none w-full '>
-                {/* py-12 */}
                 <CardHeader>
                     <CardTitle className="text-nexus-red font-semibold text-3xl">
                         Erros e sugestões
