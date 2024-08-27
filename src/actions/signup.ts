@@ -1,17 +1,18 @@
 "use server"
 
-import { signupFormSchema, TypeSignupFormSchema } from "@/app/auth/signup/_components/schema"
+import { TypeSignupFormSchema } from "@/app/auth/signup/_components/schema"
 import { getUserByEmail } from "@/data/user"
 import { db } from "@/lib/db"
+import { signupSchema } from "@/schemas"
 import { hash } from 'bcryptjs'
 
 export const signup = async (data: TypeSignupFormSchema) => {
+    
+    const isDataAsSchema = signupSchema.safeParse(data)
 
-    const isDataAcordingSchema = signupFormSchema.safeParse(data)
-
-    if (!isDataAcordingSchema.success) return null
-
-    const { username, email, password } = isDataAcordingSchema.data
+    if (!isDataAsSchema.success) return null
+    
+    const { username, email, password } = isDataAsSchema.data
 
     const isUserAlreadyRegistered = await getUserByEmail(email)
 

@@ -22,7 +22,13 @@ export type TypeSignupFormSchema = z.infer<typeof signupFormSchema>
 
 const useFormSignup = () => {
   return useForm<TypeSignupFormSchema>({
-    resolver: zodResolver(signupFormSchema)
+    resolver: zodResolver(signupFormSchema),
+    defaultValues: {
+        username: "",
+        email: "",
+        password: "",
+        terms: false,
+    }
 })
 }
 

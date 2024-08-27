@@ -1,15 +1,17 @@
-import { signinFormSchema, TypeSigninFormSchema } from "@/app/auth/signin/_components/schema";
+'use server'
+import { TypeSigninFormSchema } from "@/app/auth/signin/_components/schema";
 import { signIn } from "@/auth";
 import { DEFAULT_SIGNIN_REDIRECT } from "../../routes";
 import { AuthError } from "next-auth";
+import { signinSchema } from "@/schemas";
 
 export const signin = async (data: TypeSigninFormSchema) => {
 
-    const isDataAcordingSchema = signinFormSchema.safeParse(data)
+    const isDataAsSchema = signinSchema.safeParse(data)
 
-    if (!isDataAcordingSchema.success) return { error: 'Dados inválidos!' }
+    if (!isDataAsSchema.success) return { error: 'Dados inválidos!' }
 
-    const { email, password } = isDataAcordingSchema.data
+    const { email, password } = isDataAsSchema.data
 
     try {
         await signIn('credentials', {
@@ -22,9 +24,8 @@ export const signin = async (data: TypeSigninFormSchema) => {
             switch (error.type) {
                 case 'CredentialsSignin':
                     return { error: 'Credenciais inválidas' }
-
                 default:
-                    return { error: 'Algo deu errado' }
+                    return { error: "Algo deu errado na autenticação" }
             }
         }
         throw error

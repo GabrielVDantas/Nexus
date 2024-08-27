@@ -4,6 +4,7 @@ import { signIn } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
 import buttonStyles from '../../../styles/cssmodules/Button.module.css'
 import cardStyles from '../../../styles/cssmodules/Card.module.css'
+import { DEFAULT_SIGNIN_REDIRECT } from '../../../../routes'
 
 interface Props {
     title?: string,
@@ -12,6 +13,12 @@ interface Props {
 }
 
 const AuthCard = ({ title, description, content }: Props) => {
+
+    const oauthSignin = (provider: 'discord' | 'google') => {
+        signIn(provider, {
+            callbackUrl: DEFAULT_SIGNIN_REDIRECT
+        })
+    }
     return (
         <section className={cardStyles['card-middle-card-config']}>
             <div className={cardStyles['card-left-content-config']}>
@@ -36,12 +43,12 @@ const AuthCard = ({ title, description, content }: Props) => {
                     <CardFooter className='flex flex-col text-center'>
                         <p className={cardStyles['card-auth-footer-config']}>ou continue com...</p>
                         <Button
-                            onClick={() => signIn('discord', { callbackUrl: '/dashboard' })}
+                            onClick={() => signIn('discord', { callbackUrl: DEFAULT_SIGNIN_REDIRECT })}
                             className={`${buttonStyles['button-discord-config']} w-full mt-4`}>
                             <img src='/discord-logo-blue.svg' className={buttonStyles['disc-logo']} />
                         </Button>
                         <Button
-                            onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
+                            onClick={() => signIn('google', { callbackUrl: DEFAULT_SIGNIN_REDIRECT })}
                             className={`${buttonStyles['button-google-config']} w-full mt-4`} >
                             <img src='/google-logo.svg' className={buttonStyles['google-logo']} />
                         </Button>

@@ -1,24 +1,34 @@
 'use client'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import React from 'react'
-import useFormSignup, { TypeSignupFormSchema } from './schema'
+import React, { useTransition } from 'react'
+import { signupFormSchema, TypeSignupFormSchema } from './schema'
 import { Input } from '@/components/ui/input'
 import formStyles from '../../../../styles/cssmodules/Form.module.css'
 import { Button } from '@/components/ui/button'
-import { signupRequest } from '@/utils/userRequests/userRequests'
 import { Checkbox } from '@/components/ui/checkbox'
 import Link from 'next/link'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { signup } from '@/actions/signup'
 
 const SignupForm = () => {
 
-    const form = useFormSignup()
+    const [isPending, startTransition] = useTransition()
+
+    const form = useForm<TypeSignupFormSchema>({
+        resolver: zodResolver(signupFormSchema),
+        defaultValues: {
+            username: "",
+            email: "",
+            password: "",
+            terms: false,
+        }
+    })
 
     const submitForm = async (data: TypeSignupFormSchema) => {
-        try {
-            const response = await signupRequest(data)
-        } catch (error) {
-            throw error
-        }
+        startTransition(() => {
+            signup(data)
+        })
     }
 
     return (
@@ -32,6 +42,7 @@ const SignupForm = () => {
                             <FormLabel className='text-nexus-red'>Nome:</FormLabel>
                             <FormControl>
                                 <Input
+                                    disabled={isPending}
                                     {...field}
                                     type='text'
                                     placeholder='Seu nome aqui...'
@@ -48,7 +59,12 @@ const SignupForm = () => {
                         <FormItem className='mt-2'>
                             <FormLabel className='text-nexus-red'>E-mail:</FormLabel>
                             <FormControl>
-                                <Input {...field} type='text' placeholder='Seu e-mail aqui...' className={formStyles['form-input-config']} />
+                                <Input
+                                    disabled={isPending}
+                                    {...field}
+                                    type='text'
+                                    placeholder='Seu e-mail aqui...'
+                                    className={formStyles['form-input-config']} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -61,18 +77,24 @@ const SignupForm = () => {
                         <FormItem className='mt-2'>
                             <FormLabel className='text-nexus-red'>Senha:</FormLabel>
                             <FormControl>
-                                <Input {...field} type='text' placeholder='Sua senha aqui...' className={formStyles['form-input-config']} />
+                                <Input 
+                                    disabled={isPending}
+                                    {...field} 
+                                    type='text' 
+                                    placeholder='Sua senha aqui...' 
+                                    className={formStyles['form-input-config']} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
                     )}
                 />
-                <FormField 
+                <FormField
                     control={form.control}
                     name='terms'
                     render={({ field }) => (
                         <FormItem className='mt-2'>
-                            <Checkbox 
+                            <Checkbox
+                                disabled={isPending}
                                 className='border-nexus-red border-2 rounded bg-nexus-darker'
                                 checked={field.value}
                                 onCheckedChange={field.onChange}

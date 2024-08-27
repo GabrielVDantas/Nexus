@@ -36,6 +36,6 @@ model Account {
   updatedAt          DateTime  @updatedAt @map("updated_at")
   user               User      @relation(fields: [userId], references: [id])
 
-  @@unique([providerId, providerAccountId])
+  @@unique([providerId, providerAccountId], name: "providerId_providerAccountId")
   @@map("accounts")
 }

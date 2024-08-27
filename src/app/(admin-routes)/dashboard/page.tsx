@@ -1,6 +1,5 @@
 import Post from '@/app/(admin-routes)/dashboard/_components/Post'
 import Search from '@/app/(admin-routes)/dashboard/_components/Search'
-import Link from 'next/link'
 import { posts } from './posts'
 import { auth } from '@/auth'
 import NotAuthorizedPage from '../not-authorized/page'
