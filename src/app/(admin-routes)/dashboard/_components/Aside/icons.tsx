@@ -16,6 +16,6 @@ export const userRelatedIcons = [
     { id: 8, svg: <Squares2X2Icon className="size-6" />, span: "Meus projetos", to: '/dashboard/my-projects' },
     { id: 9, svg: <IdentificationIcon className="size-6" />, span: "Minhas informações", to: '/dashboard/my-profile' },
     { id: 10, svg: <BellIcon className="size-6" />, span: "Notificações", to: '/' },
-    { id: 11, svg: <ArrowLeftEndOnRectangleIcon className="size-6" />, span: "Sair", to: '/' },
+    { id: 11, svg: <ArrowLeftEndOnRectangleIcon className="size-6" />, span: "Sair", to: null },
     { id: 12, svg: <TrashIcon className="size-6" />, span: "Deletar conta", to: '/' },
 ]

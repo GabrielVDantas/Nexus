@@ -2,13 +2,14 @@ import Image from "next/image"
 import React from 'react'
 import asideStyles from '../../../../../styles/cssmodules/Aside.module.css'
 import Link from "next/link"
+import Logout from "./logout"
 
 interface AsideProps {
     icons: {
         id: number,
         svg: JSX.Element,
         span: string,
-        to: string,
+        to: string | null,
     }[],
     position: 'right' | 'left',
 }
@@ -28,15 +29,24 @@ const Aside = async ({ icons, position }: AsideProps) => {
             )}
             {icons.map((icon) => (
                 <div className={asideStyles['aside-icon-container-config']} key={icon.id}>
-                    <Link href={icon.to} className={asideStyles['aside-icon-link-config']}>
-                        {icon.svg}
-                        <span className={asideStyles['aside-icon-text-config']}>{icon.span}</span>
-                    </Link>
+                    {icon.to ? (
+                        <Link href={icon.to} className={asideStyles['aside-icon-link-config']}>
+                            {icon.svg}
+                            <span className={asideStyles['aside-icon-text-config']}>{icon.span}</span>
+                        </Link>
+                    ) : (
+                        <Logout>
+                            <div className={asideStyles['aside-icon-link-config']}>
+                                {icon.svg}
+                                <span className={asideStyles['aside-icon-text-config']}>{icon.span}</span>
+                            </div>
+                        </Logout>
+                    )}
                 </div>
             ))}
         </aside>
     )
 }
 
-export default Aside  
+export default Aside
 
